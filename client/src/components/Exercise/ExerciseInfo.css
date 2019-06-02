@@ -1,0 +1,43 @@
+
+@media (min-width: 300px) {
+	.edit-btn {
+		margin-left: 0em;
+	}
+}
+
+@media (min-width: 900px) {
+	.edit-btn {
+		margin-left:-16em;
+		width: 16em;
+	}
+}
+
+.add-btn {
+	margin-top: .15rem;
+}
+@media (min-width: 150px) {
+	.add-btn {
+		margin-left: -2em;
+		width: 2em;
+	}
+}
+
+@media (min-width: 300px) {
+	.add-btn {
+		margin-left: 2em;
+	}
+}
+
+@media (min-width: 900px) {
+	.add-btn {
+		margin-left:-16em;
+		width: 16em;
+	}
+}
+
+@media (min-width: 1300px) {
+	.add-btn {
+		margin-left:-32em;
+		width: 32em;
+	}
+}

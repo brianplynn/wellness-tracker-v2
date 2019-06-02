@@ -1,0 +1,21 @@
+.graph-header {
+	margin-bottom: -4rem;	
+}
+.edit-sleep-btn {
+	width: 8em;
+	margin-left: -12em;
+}
+
+@media (max-width: 1200px) {
+	.edit-sleep-btn {
+		width: 8em;
+		margin-left: -6em;
+	}
+}
+
+@media (max-width: 860px) {
+	.edit-sleep-btn {
+		width: 8em;
+		margin-left: 0em;
+	}
+}

@@ -1,0 +1,56 @@
+.login {
+	border-color: rgba(240,190,210,1);
+	width: 50%;
+	z-index: 2;
+	position: relative;
+	top: 40%;
+	transform: translateY(-50%);
+}
+
+@media (max-width: 1400px) {
+	.login {
+		width: 65%;
+	}
+}
+
+@media (max-width: 1050px) {
+	.login {
+		width: 80%;
+	}
+}
+
+.facebook {
+	max-width: 280px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	transition: none;
+}
+
+.facebook-btn {
+	width: 100%;
+	background-color: #3b5998;
+	color: white;
+	font-weight: 700;
+	padding: 20px 0px;
+	border: 1px solid #3b5998;
+	cursor: pointer;
+	outline: none;
+	transition: none;
+}
+
+.github {
+	width: 90%;
+	max-width: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	color: white;
+	font-weight: 700;
+	padding: 20px 0px;
+	border: 1px solid black;
+	margin-bottom: 4rem;
+	cursor: pointer;
+	outline: none;
+}

@@ -1,0 +1,20 @@
+.hid {
+  display: none;
+}
+
+.dropbtn {
+	outline: none;
+	background-color: transparent;
+	border: none;
+	color: white;
+	height: 2.5em;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	z-index: 4;
+	margin-bottom: -6.5em;
+	cursor: pointer;
+	background-color: rgba(70, 0, 90, 1);
+	border-radius: 10%;
+}

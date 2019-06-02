@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700");
+
+body {
+	height: 100vh;
+	font-family: "Nunito Sans", sans-serif;
+	background-color: rgba(35, 0, 55, 1)
+}
+
+#root {
+	height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
