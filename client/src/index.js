@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Switch, Route, Router } from 'react-router-dom';
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from "./reducers"
 import history from "./history";
@@ -13,9 +12,8 @@ import "tachyons";
 import Particles from 'react-particles-js';
 import * as serviceWorker from './serviceWorker';
 
-const logger = createLogger();
-const store = 
-	createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
+const store =
+	createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 const particlesOptions = {
   particles: {
@@ -30,7 +28,7 @@ const particlesOptions = {
 }
 
 ReactDOM.render(
-                
+
           				<Provider store={store}>
           					<Particles className="particles" params={particlesOptions}/>
           					<Router history={history}>

@@ -8,7 +8,7 @@ const isLoggedIn = (state=false, action={}) => {
 			if (action.payload !== 'user id does not exist') {
 				return true;
 			}
-			break;
+			return state;
 		default:
 			return state;
 	}
