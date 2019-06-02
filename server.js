@@ -36,11 +36,11 @@ app.use(session({
     	httpOnly: false
     },
     // uncomment for local redis
-    // store: new redisStore({ 
-    //   host: 'localhost', 
-    //   port: 6379, 
-    //   client: redisClient, 
-    //   ttl: 86400 
+    // store: new redisStore({
+    //   host: 'localhost',
+    //   port: 6379,
+    //   client: redisClient,
+    //   ttl: 86400
     // }),
     store: new redisStore({
       client: redisClient
@@ -64,12 +64,8 @@ const db = knex({
   // }
 });
 
-app.get('/', (req, res) => {
-	res.send('this is working');
-})
-
 app.get('/api/auth', (req, res) => {
-	return req.session.userId ? res.json(req.session.userId) : res.status(400).json('user id does not exist') 
+	return req.session.userId ? res.json(req.session.userId) : res.status(400).json('user id does not exist')
 })
 
 app.get('/api/logout', (req, res) => {

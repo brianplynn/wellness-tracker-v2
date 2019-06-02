@@ -5,18 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "heroku-postbuild": "cd client && npm i && npm run build",
     "server": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brianplynn/wellness-tracker-api.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brianplynn/wellness-tracker-api/issues"
-  },
-  "homepage": "https://github.com/brianplynn/wellness-tracker-api#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "connect-redis": "^3.4.1",
