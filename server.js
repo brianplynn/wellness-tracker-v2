@@ -18,6 +18,7 @@ const app = express();
 app.use(cors({credentials: true, origin: true}));
 app.options('*', cors());
 app.use(bodyParser.json());
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.static("public"));
@@ -98,6 +99,11 @@ app.post("/api/login-gh", (req, res) => { login.logInGithub(req, res, db) });
 app.post("/api/register-fb", (req, res) => { register.registerFB(req, res, db) });
 app.post("/api/register-gh", (req, res) => { register.registerGithub(req, res, db) });
 
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.listen(port, () => {
     console.log(`${port}`)
