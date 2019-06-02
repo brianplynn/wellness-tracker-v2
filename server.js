@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex');
@@ -14,6 +15,12 @@ const sleep = require('./controllers/sleep');
 const exercise = require('./controllers/exercise');
 
 const app = express();
+app.use(cors({credentials: true, origin: true}));
+app.options('*', cors());
+app.use(bodyParser.json());
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static("public"));
 
 redisClient.on('error', (err) => {
   console.log('Redis error: ', err);
@@ -22,10 +29,6 @@ redisClient.on('error', (err) => {
 const port = process.env.PORT || 5000;
 const { SESS_NAME = 'sid', SESS_SECRET='asdfsecret' } = process.env;
 
-
-app.use(cors({credentials: true, origin: true}));
-app.options('*', cors());
-app.use(bodyParser.json());
 app.use(session({
     name: SESS_NAME,
     secret: SESS_SECRET,
