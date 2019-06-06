@@ -61,6 +61,7 @@ class App extends Component {
 	      )
 	      :
 	      <div className="App">
+	      	<h1 className="loading-msg">Loading....</h1>
 	      </div>
 	    );
 	}
