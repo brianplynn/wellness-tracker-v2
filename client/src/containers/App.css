@@ -17,8 +17,9 @@
 
 .loading-msg {
   position: fixed;
+  text-align: center;
   top: 40%;
-  left: 40%;
+  width: 100%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
