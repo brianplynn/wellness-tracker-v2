@@ -60,7 +60,9 @@ class App extends Component {
 	      	</React.Fragment>
 	      )
 	      :
-	      null
+	      <div className="App">
+	      	<h1 className="loading-msg">Loading....</h1>
+	      </div>
 	    );
 	}
 }
