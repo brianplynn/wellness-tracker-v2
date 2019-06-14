@@ -13,7 +13,7 @@ class Login extends Component {
 		  fetch('/api/login-fb', {
 		        method: "post",
 		        headers: {'Content-Type': 'application/json'},
-		        body: JSON.stringify({  
+		        body: JSON.stringify({
 		          id: response.id
 		        })
 		  })
@@ -31,7 +31,7 @@ class Login extends Component {
 		  		fetch('/api/register-fb', {
 			        method: "post",
 			        headers: {'Content-Type': 'application/json'},
-			        body: JSON.stringify({  
+			        body: JSON.stringify({
 			          id: response.id
 			        })
 			    })
@@ -59,7 +59,7 @@ class Login extends Component {
 		fetch('/api/login-gh', {
 	        method: "post",
 	        headers: {'Content-Type': 'application/json'},
-	        body: JSON.stringify({  
+	        body: JSON.stringify({
 	        	code: response.code
 	        })
 	      })
@@ -69,7 +69,7 @@ class Login extends Component {
 				fetch('/api/register-gh', {
 			        method: "post",
 			        headers: {'Content-Type': 'application/json'},
-			        body: JSON.stringify({  
+			        body: JSON.stringify({
 			          id: res.id
 			        })
 			    })
@@ -92,6 +92,23 @@ class Login extends Component {
 		});
 	}
     onFailure = response => console.error(response);
+
+
+    guestLogin = () => {
+    	const { setErrorMessage, logIn } = this.props;
+    	setErrorMessage("Connecting, this may take a minute...")
+    	fetch('/api/guest', {
+    		method: 'get',
+    		headers: {'Content-Type': 'application/json'}
+    	})
+    	.then(res => res.json())
+    	.then(res => {
+    		if (res.id === "guest") {
+    			logIn({ id: res.id })
+    			history.push('/nutrition');
+    		}
+    	})
+    }
 
 	render() {
 		const { messageText } = this.props;
@@ -116,9 +133,13 @@ class Login extends Component {
 							redirectUri=""
 							onSuccess={this.onSuccess}
 						    onFailure={this.onFailure}/>
+				<div className="guest-login tc"
+					 onClick={this.guestLogin}>
+					 Continue as Guest
+				</div>
 				{ messageText !== "" ? <ErrorMessage messageText={messageText} /> : "" }
 			</div>
-		);	
+		);
 	}
 }
 export default Login;

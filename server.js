@@ -56,7 +56,7 @@ app.use(session({
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString : process.env.DATABASE_URL,
+    connectionString : 'postgres://nymfnuqgemkyjk:855d59ea5291d112c7a7a7033bddc65edf4c0b14b76642c33b0933949e20f5c8@ec2-75-101-147-226.compute-1.amazonaws.com:5432/d4bbvqp9e1u7c5',
     ssl: true,
   }
   // uncomment for local db
@@ -95,6 +95,7 @@ app.post("/api/exercise-submit", (req, res) => { exercise.submitWorkouts(req, re
 
 app.post("/api/login-fb", (req, res) => { login.logInFB(req, res, db) });
 app.post("/api/login-gh", (req, res) => { login.logInGithub(req, res, db) });
+app.get("/api/guest", (req, res) => { login.guest(req, res, db) });
 
 app.post("/api/register-fb", (req, res) => { register.registerFB(req, res, db) });
 app.post("/api/register-gh", (req, res) => { register.registerGithub(req, res, db) });
