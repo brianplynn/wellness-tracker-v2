@@ -56,7 +56,7 @@ app.use(session({
 const db = knex({
   client: 'pg',
   connection: {
-    connectionString : 'postgres://nymfnuqgemkyjk:855d59ea5291d112c7a7a7033bddc65edf4c0b14b76642c33b0933949e20f5c8@ec2-75-101-147-226.compute-1.amazonaws.com:5432/d4bbvqp9e1u7c5',
+    connectionString : process.env.DATABASE_URL,
     ssl: true,
   }
   // uncomment for local db
