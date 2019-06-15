@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -28,12 +29,11 @@ redisClient.on("error", err => {
 });
 
 const port = process.env.PORT || 5000;
-const { SESS_NAME = "sid", SESS_SECRET = "asdfsecret" } = process.env;
 
 app.use(
   session({
-    name: SESS_NAME,
-    secret: SESS_SECRET,
+    name: process.env.SESS_NAME,
+    secret: process.env.SESS_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
