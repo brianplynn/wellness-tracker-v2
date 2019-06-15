@@ -79,7 +79,7 @@ app.get("/api/logout", (req, res) => {
     if (err) {
       return res.json({ message: "failed to logout" });
     }
-    res.clearCookie(SESS_NAME);
+    res.clearCookie(process.env.SESS_NAME);
     return res.json({ message: "logged out" });
   });
 });

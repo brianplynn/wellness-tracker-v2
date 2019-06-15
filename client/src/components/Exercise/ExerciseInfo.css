@@ -78,7 +78,7 @@
 	}
 
 	.del-btn {
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		border-width: 1px;
 		padding: 0.5rem 2rem;
 		font-weight: normal;
@@ -88,6 +88,10 @@
 }
 
 @media screen and (max-width: 550px) {
+	.date-container-einfo {
+		padding-top: 1rem;
+	}
+
 	#workout-table {
 		display: block;
 	}

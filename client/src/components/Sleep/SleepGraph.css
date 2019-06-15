@@ -1,8 +1,7 @@
 .graph-container {
 	width: 70%;
-    max-width: 64rem;
+	max-width: 64rem;
 }
-
 
 .graph-header {
 	margin-bottom: -4rem;
@@ -42,5 +41,12 @@
 		margin: auto;
 		margin-top: 0;
 		width: 4.5em;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.graph-header {
+		margin-top: 0;
+		padding-top: 1rem;
 	}
 }
