@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom"
+import { logOut } from "../functions";
+import "./Nav.css";
 
 const Navbar = ({ setSection }) => {
 		return (
@@ -7,12 +9,12 @@ const Navbar = ({ setSection }) => {
 			  <nav className="f6 fw6 ttu tracked flex justify-between">
 			  	<div>
 			  	<Link to="/nutrition">
-				    <span className="link dim pointer outline-0 white dib ml5 mr3" 
+				    <span className="link dim pointer outline-0 white dib ml5 mr3"
 				    		title="nutrition"
 				    		onClick={setSection}>Nutrition</span>
 			    </Link>
 			    <Link to="/sleep">
-				    <span className="link dim pointer outline-0 white dib mr3" 
+				    <span className="link dim pointer outline-0 white dib mr3"
 				    		title="sleep"
 				    		onClick={setSection}>Sleep</span>
 			    </Link>
@@ -29,20 +31,9 @@ const Navbar = ({ setSection }) => {
 			    </div>
 			  </nav>
 			</header>
-		);	
+		);
 }
 
-const logOut = () => {
-	fetch('/api/logout', {
-		method: "GET",
-		headers: {'Content-Type': 'application/json'}
-	})
-	.then(res => res.json())
-	.then(res => {
-		if (res.message === 'logged out') {
-			window.location.href = "/"
-		}
-	})
-}
+
 
 export default Navbar;

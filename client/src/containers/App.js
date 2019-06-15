@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from "../components/Navbar.js";
 import Main from "../components/Main.js";
 import Login from "../components/Login.js";
+import Hamburger from "../components/Hamburger.js";
 import { setError, syncNutrition, syncSleep, syncWorkouts, setActiveSection, logIn, addDailyFoods, authCheck } from "../actions"
 
 const mapStateToProps = state => {
@@ -44,6 +45,7 @@ class App extends Component {
 	      ( isLoggedIn ?
 	      <div className="App">
 			   <Navbar setSection={setSection} />
+			   <Hamburger setSection={setSection} />
 			   <Main isLoggedIn={isLoggedIn}
 			   		 activeUser={activeUser}
 			   		 syncWorkoutsFunc={syncWorkoutsFunc}

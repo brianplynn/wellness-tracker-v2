@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import rootReducer from "./reducers"
+import logger from 'redux-logger'
 import history from "./history";
 import './index.css';
 import App from './containers/App';
@@ -13,7 +14,7 @@ import Particles from 'react-particles-js';
 import * as serviceWorker from './serviceWorker';
 
 const store =
-	createStore(rootReducer, applyMiddleware(thunkMiddleware));
+	createStore(rootReducer, applyMiddleware(thunkMiddleware, logger));
 
 const particlesOptions = {
   particles: {

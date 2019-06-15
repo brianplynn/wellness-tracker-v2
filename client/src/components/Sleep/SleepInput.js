@@ -3,7 +3,7 @@ import "./SleepInput.css";
 
 const SleepInput = ({ activeUser, currentDate, sleepAddForm, changeSleepAddForm, addSleepToGraph }) => {
 	return (
-		<form className="form-sleep pa4 white center ba w-50 br2">
+		<form className="form-sleep white center">
 		  <h1 className="tc">Good {currentDate.getHours() < 12 ? "Morning" : (currentDate.getHours() < 18 ? "Afternoon" : "Evening")}!
 		  </h1>
 		  <h2 className="tc f3">Enter last night's sleep here:
@@ -11,19 +11,19 @@ const SleepInput = ({ activeUser, currentDate, sleepAddForm, changeSleepAddForm,
 		  <div>
 		    <label htmlFor="name" className="f4 fw7 tc center b db mt4 mb3">Time</label>
 		    <div className="flex justify-center">
-			    <input autoComplete="off" 
-			    	   className="input-reset ba b--white pa2 white bg-transparent mb2 db w-20 mw3 mr2" 
-			    	   type="text" 
-			    	   aria-describedby="name-desc" 
+			    <input autoComplete="off"
+			    	   className="input-reset ba b--white pa2 white bg-transparent mb2 db w-20 mw3 mr2"
+			    	   type="text"
+			    	   aria-describedby="name-desc"
 			    	   placeholder="0"
 			    	   data-field="hours"
 			    	   value={sleepAddForm.hours}
 			    	   onChange={changeSleepAddForm} />
 			    <div className="f3"> : </div>
-			    <input autoComplete="off" 
-			    	   className="input-reset ba b--white pa2 white bg-transparent mb2 db w-20 mw3 ml1" 
-			    	   type="text" 
-			    	   aria-describedby="name-desc" 
+			    <input autoComplete="off"
+			    	   className="input-reset ba b--white pa2 white bg-transparent mb2 db w-20 mw3 ml1"
+			    	   type="text"
+			    	   aria-describedby="name-desc"
 			    	   placeholder="00"
 			    	   data-field="minutes"
 			    	   value={sleepAddForm.minutes}
@@ -52,7 +52,7 @@ const SleepInput = ({ activeUser, currentDate, sleepAddForm, changeSleepAddForm,
 				</label>
 		    </div>
 		  </fieldset>
-		  <button type="submit" 
+		  <button type="submit"
 		  		  className="db w4 b ph3 pv2 center tc light-blue ba br2 b--light-blue bg-transparent grow pointer f6"
 		  		  onClick={addSleepToGraph.bind(null, sleepAddForm, activeUser.id)}
 		  		  >

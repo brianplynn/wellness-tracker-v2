@@ -1,43 +1,127 @@
+.date-container-einfo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-@media (min-width: 300px) {
-	.edit-btn {
-		margin-left: 0em;
+.left-right-icon {
+	padding: 0.5em;
+	margin: 0.5em;
+	cursor: pointer;
+	z-index: 999;
+}
+
+.title-container-editing {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.edit-btn {
+	width: 12em;
+}
+
+.del-btn {
+	margin-bottom: 0.5rem;
+	background-color: transparent;
+	color: #ffdfdf;
+	font-weight: bold;
+	border-width: 0.125rem;
+	border-radius: 100%;
+	border-color: #ffdfdf;
+	border-style: solid;
+	border-width: 2px;
+	cursor: pointer;
+}
+
+.filler-div-non-editing {
+	width: 9em;
+}
+
+.filler-div-editing {
+	width: 2em;
+}
+
+.save-cancel-btns {
+	margin: 1em 0em 4em 0em;
+}
+
+#workout-table td {
+	border-top: 1.5px solid rgba(240, 190, 210, 1);
+	color: white;
+}
+
+#workout-text {
+	text-align: center;
+}
+
+.workout-data {
+	text-align: center;
+}
+
+@media screen and (max-width: 770px) {
+	#workout-edit-table {
+		display: block;
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	#workout-edit-table td {
+		display: inline-block;
+		margin-left: 80%;
+	}
+
+	.edit-workout-row {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.del-btn {
+		border-radius: 0.5rem;
+		border-width: 1px;
+		padding: 0.5rem 2rem;
+		font-weight: normal;
+		margin-bottom: 2rem;
+		margin-left: 120%;
 	}
 }
 
-@media (min-width: 900px) {
-	.edit-btn {
-		margin-left:-16em;
-		width: 16em;
+@media screen and (max-width: 550px) {
+	#workout-table {
+		display: block;
 	}
-}
 
-.add-btn {
-	margin-top: .15rem;
-}
-@media (min-width: 150px) {
+	#workout-table td {
+		display: inline-block;
+		border: none;
+		color: white;
+	}
+	.filler-div-editing {
+		display: none;
+	}
+	.title-container-editing {
+		flex-direction: column;
+	}
 	.add-btn {
-		margin-left: -2em;
-		width: 2em;
+		margin-top: 1em;
 	}
-}
-
-@media (min-width: 300px) {
-	.add-btn {
-		margin-left: 2em;
+	.del-btn {
+		margin-left: 25%;
 	}
-}
-
-@media (min-width: 900px) {
-	.add-btn {
-		margin-left:-16em;
-		width: 16em;
+	#workout-text {
+		width: 100vw;
+		border-top: 2px solid rgba(240, 190, 210, 1) !important;
+		border-bottom: 1px solid white !important;
+		padding-left: 1rem;
+		text-align: left;
 	}
-}
 
-@media (min-width: 1300px) {
-	.add-btn {
-		margin-left:-32em;
-		width: 32em;
+	.workout-data {
+		padding-left: 1rem;
+	}
+
+	#workout-edit-table td {
+		margin-left: 18%;
 	}
 }

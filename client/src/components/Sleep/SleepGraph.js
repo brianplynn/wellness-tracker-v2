@@ -5,22 +5,22 @@ import "./SleepGraph.css"
 const SleepGraph = ({ sleepData, editSleep }) => {
 	const hoursArr=sleepData.coordinates.map(item => item.hours);
   return (
-    <div className="w-70 mw8 center flex flex-column">
+    <div className="center flex flex-column graph-container">
     <div className="z-3 flex graph-header">
       <div className="w-100">
           <h1 className="white tc">Your 7-day sleep totals</h1>
       </div>
-      <div className="z-3 edit-sleep-btn">    
-      <button className="z-3 b center pv2 ph3 mt3 tc light-blue ba br2 b--light-blue bg-transparent grow pointer outline-0 f4"
-              onClick={editSleep.bind(null, sleepData.coordinates)}>Edit</button>  
-      </div>     
+      <div className="z-3 edit-sleep-btn">
+      <button className="z-3 b center pv2 ph3 tc light-blue ba br2 b--light-blue bg-transparent grow pointer outline-0 f4"
+              onClick={editSleep.bind(null, sleepData.coordinates)}>Edit</button>
+      </div>
     </div>
 		<VictoryChart
         // domainPadding will add space to each side of VictoryBar to
         // prevent it from overlapping the axis
         domainPadding={20}
         style={{
-          width: "80%"
+          width: window.innerWidth > 770 ? "80%" : "100%"
         }}
       >
         <VictoryAxis

@@ -1,6 +1,6 @@
-import { SET_ERROR, LOG_IN } from "../constants/action-types.js"
+import { SET_ERROR, LOG_IN } from "../constants/action-types.js";
 
-const messageText = (state="", action={}) => {
+const messageText = (state = "", action = {}) => {
 	switch (action.type) {
 		case LOG_IN:
 			return "";
@@ -9,6 +9,6 @@ const messageText = (state="", action={}) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default messageText;

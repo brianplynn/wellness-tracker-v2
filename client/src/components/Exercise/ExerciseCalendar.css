@@ -13,8 +13,11 @@
 }
 
 .date-container {
-		width: 80%;
-	}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 80%;
+}
 
 @media (max-width: 1680px) {
 	.date-container {
@@ -45,18 +48,11 @@
 		width: 8rem;
 	}
 }
-/*
-@media (max-width: 1400px) {
-	#date {
-	 	width: 9rem;
-	 }
+@media screen and (max-width: 1000px) {
+	.date-container {
+		display: none;
+	}
 }
-
-@media (max-width: 1400px) {
-	#date {
-	 	width: 8rem;
-	 }
-}*/
 
 .pink-border {
 	border-color: rgba(240,190,210,1);

@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	changeDate: (e) => 	dispatch(changeDate(e.target.dataset.key)),
+	changeDate: (index) => dispatch(changeDate(index)),
 	editWorkout: (day, workout) => dispatch(editWorkout(day, workout)),
 	cancelWorkoutEdit: () => dispatch(cancelWorkoutEdit()),
 	changeWorkoutField: (e) => dispatch(changeWorkoutField(e.target.dataset.day, e.target.dataset.row, e.target.dataset.col, e.target.value)),
@@ -27,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
 			method: "post",
 	        headers: {'Content-Type': 'application/json'},
 	        body: JSON.stringify({
-	          user: user,  
+	          user: user,
 	          day: day,
 	          fields: fields
 	        })
@@ -44,23 +44,24 @@ class Exercise extends Component {
 		const { activeUser, currentDate, saveChanges, cancelWorkoutEdit, addWorkout, deleteWorkout, changeWorkoutField, changeWorkoutTitle, editingWorkout, editWorkout, workouts, workoutFields, changeDate, exerciseHasSynced } = this.props;
 		return (
 			<div>{ exerciseHasSynced ?
-						<React.Fragment>
-							<ExerciseCalendar currentDate={currentDate}
-											  changeDate={changeDate}
-											  workouts={workouts}  />
-							<ExerciseInfo currentDate={currentDate}
-										  addWorkout={addWorkout}
-										  deleteWorkout={deleteWorkout}
-										  cancelWorkoutEdit={cancelWorkoutEdit}
-										  changeWorkoutField={changeWorkoutField}
-										  changeWorkoutTitle={changeWorkoutTitle}
-										  saveChanges={saveChanges}
-										  editingWorkout={editingWorkout}
-										  editWorkout={editWorkout}
-										  workouts={workouts}
-										  workoutFields={workoutFields}
-										  activeUser={activeUser} />
-						</React.Fragment> 
+				<React.Fragment>
+					<ExerciseCalendar currentDate={currentDate}
+									  changeDate={changeDate}
+									  workouts={workouts}  />
+					<ExerciseInfo currentDate={currentDate}
+								  addWorkout={addWorkout}
+								  deleteWorkout={deleteWorkout}
+								  cancelWorkoutEdit={cancelWorkoutEdit}
+								  changeWorkoutField={changeWorkoutField}
+								  changeWorkoutTitle={changeWorkoutTitle}
+								  saveChanges={saveChanges}
+								  editingWorkout={editingWorkout}
+								  editWorkout={editWorkout}
+								  workouts={workouts}
+								  workoutFields={workoutFields}
+								  activeUser={activeUser}
+								  changeDate={changeDate} />
+				</React.Fragment>
 				:
 				null
 				}

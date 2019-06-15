@@ -6,7 +6,7 @@ export const arrayReplace = (array, item, i) => {
 export const dateToString = (diff) => {
 	let d = new Date();
 	d.setDate(d.getDate() - diff);
-	
+
 	let month = '' + (d.getMonth() + 1);
     let day = '' + d.getDate();
     let year = d.getFullYear();
@@ -15,4 +15,17 @@ export const dateToString = (diff) => {
     if (day.length < 2) day = '0' + day;
 
     return [year, month, day].join('-');
+}
+
+export const logOut = () => {
+	fetch('/api/logout', {
+		method: "GET",
+		headers: {'Content-Type': 'application/json'}
+	})
+	.then(res => res.json())
+	.then(res => {
+		if (res.message === 'logged out') {
+			window.location.href = "/"
+		}
+	})
 }

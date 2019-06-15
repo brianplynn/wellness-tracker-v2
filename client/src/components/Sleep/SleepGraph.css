@@ -1,9 +1,17 @@
-.graph-header {
-	margin-bottom: -4rem;	
+.graph-container {
+	width: 70%;
+    max-width: 64rem;
 }
+
+
+.graph-header {
+	margin-bottom: -4rem;
+}
+
 .edit-sleep-btn {
 	width: 8em;
 	margin-left: -12em;
+	margin-top: 1rem;
 }
 
 @media (max-width: 1200px) {
@@ -17,5 +25,22 @@
 	.edit-sleep-btn {
 		width: 8em;
 		margin-left: 0em;
+	}
+}
+
+@media screen and (max-width: 770px) {
+	.graph-container {
+		width: 95%;
+	}
+
+	.graph-header {
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
+
+	.edit-sleep-btn {
+		margin: auto;
+		margin-top: 0;
+		width: 4.5em;
 	}
 }

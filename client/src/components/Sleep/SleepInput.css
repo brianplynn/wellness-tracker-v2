@@ -1,5 +1,16 @@
 .form-sleep {
-	border-color: rgba(240,190,210,1);
+	border: 1px solid rgba(240,190,210,1);
+  border-radius: .25rem;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 1.5em;
+  padding: 1em .5em
+}
+
+@media screen and (max-width: 550px) {
+  .form-sleep {
+    border: none;
+  }
 }
 
 /* Customize the label (the container) */
