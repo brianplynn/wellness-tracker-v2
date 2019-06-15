@@ -69,7 +69,7 @@
 
 	#workout-edit-table td {
 		display: inline-block;
-		margin-left: 80%;
+		margin-left: 83%;
 	}
 
 	.edit-workout-row {
@@ -83,7 +83,7 @@
 		padding: 0.5rem 2rem;
 		font-weight: normal;
 		margin-bottom: 2rem;
-		margin-left: 120%;
+		margin-left: 140%;
 	}
 }
 
@@ -106,9 +106,7 @@
 	.add-btn {
 		margin-top: 1em;
 	}
-	.del-btn {
-		margin-left: 25%;
-	}
+
 	#workout-text {
 		width: 100vw;
 		border-top: 2px solid rgba(240, 190, 210, 1) !important;
@@ -122,6 +120,27 @@
 	}
 
 	#workout-edit-table td {
+		margin-left: 25%;
+	}
+	.del-btn {
+		margin-left: 30%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	#workout-edit-table td {
 		margin-left: 18%;
+	}
+	.del-btn {
+		margin-left: 27%;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	#workout-edit-table td {
+		margin-left: 8%;
+	}
+	.del-btn {
+		margin-left: 24%;
 	}
 }
